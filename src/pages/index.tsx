@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { HomeContext } from '../context/HomeContext';
 import styles from '../styles/Home.module.css';
 import {convertTimeToString} from '../utils/ConverterUtils';
@@ -18,8 +18,16 @@ import {
  TimeContainer,
  TimeTotal,
  Images,
- VolumeControl
+ VolumeControl,
+ Title,
+ ContainerExt,
+ VideoItem,
+ VideoThubnail,
+ VideoTitle,
+ VideoDesc,
+ InfoVideo,
 } from '../styles/Home/styles'
+import { ListItemAvatar } from '@material-ui/core';
 
 export default function Home() {
   const {
@@ -37,8 +45,18 @@ export default function Home() {
     configVolume,
     configCurrentTime
   } = useContext(HomeContext);
+
+  const listVideo = [
+    {id: 0, title: 'Homen de ferro', img: "./thubnail1.png", desc: '1h:45min'},
+    {id: 1, title: 'Interestelar', img: "./thubnail2.png", desc: '2h:05min'},
+    {id: 2, title: 'Oblivion', img: "./thubnail3.png", desc: '1h:50min'},
+    {id: 3, title: 'No limite do amanhã', img: "./thubnail4.png", desc: '2h:00min'},
+    {id: 4, title: 'O livro de eli', img: "./thubnail5.jpg", desc: '1h:10min'},
+  ];
+
   return (
     <Container>
+        <Title>u F l i x</Title>
         <Canvas className={styles.canvas} ref={canvasRef}></Canvas>
         <Video>
           <video className={styles.conteudo} src={video} ref={videoRef} hidden></video>
@@ -77,6 +95,18 @@ export default function Home() {
           <Images className={styles.images} ref={divRef}>
           </Images>
         </Video>
+        <ContainerExt>
+        {listVideo.map(item => (
+          <VideoItem key={item.id}>
+            <VideoThubnail src={item.img}/>
+            <InfoVideo>
+              <VideoTitle>{item.title}</VideoTitle>
+              <VideoDesc>{item.desc}</VideoDesc>
+            </InfoVideo>
+          </VideoItem>
+        ))}
+        </ContainerExt>
+        
     </Container>
   )
 }

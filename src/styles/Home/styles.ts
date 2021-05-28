@@ -7,14 +7,61 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: flex-start;
   height: 100vh;
-  padding: 30px;
-  background: #333;
+  padding: 20px;
+  background: #282828;
+`
+
+export const VideoTitle = styled.h3`
+  color: #fff;
+  margin-left: 10px;
+  margin-top: -1px;
+`
+export const VideoDesc = styled.h5`
+  color: #ddd;
+  margin-left: 10px;
+  margin-top: -1px;
+`
+
+export const VideoThubnail = styled.img`
+  height: 100px;
+  width: 100px;
+`
+
+export const InfoVideo = styled.div`
+  flex-direction: column;
+`
+
+export const ContainerExt = styled.div`
+flex-direction: column;
+position: absolute;
+right: 60px;
+top: 60px;
+border-radius: 5px;
+width: 360px;
+height: 90%;
+`
+
+export const VideoItem = styled.div`
+display: flex;
+height: 103px;
+border-radius: 5px;
+width: 350px;
+padding: 1px;
+border: 1px solid red;
+margin-bottom: 8px;
+flex-direction: row;
+justify-content: flex-start;
+`
+
+export const Title = styled.h2`
+  color: red;
+  margin-left: 10px;
+  margin-top: -10px;
 `
 
 export const Video = styled.div`
-  width: 640px;
-  height: 360px;
-  padding: 10px;
+  width: 800px;
+  height: 560px;
 `
 
 export const Conteudo = styled.video`
@@ -35,7 +82,7 @@ export const Controls = styled.div`
 export const PlayControls = styled.div`
   display: flex;
   align-items: center;
-  background-color: #303030;
+  background-color: #282828;
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -103,9 +150,10 @@ export const VolumeControl = styled.input.attrs({
 `
 
 export const Canvas = styled.canvas`
-  background-color: #666;
-  width: 640px;
-  height: 360px;
+  background-color: #ddd;
+  width: 800px;
+  height: 560px;
+  color: red;
 `
 
 export const Images = styled.div`
