@@ -26,6 +26,7 @@ import {
  VideoTitle,
  VideoDesc,
  InfoVideo,
+ TitleVideo,
 } from '../styles/Home/styles'
 import { ListItemAvatar } from '@material-ui/core';
 
@@ -78,6 +79,7 @@ export default function Home() {
                   :
                   <PlayIcon onClick={toonglePlayPause} />
                 } 
+                <TitleVideo>Homen de ferro</TitleVideo>
                 { isMute ?
                   <VolumeOffIcon onClick={configMute} />
                   :
@@ -91,13 +93,14 @@ export default function Home() {
                 <div className={styles.timeTotal}>
                   <span>{convertTimeToString(currentTime)}</span> / <span>{convertTimeToString(totalTime)}</span>
                 </div>
+                
           </PlayControls>
           <Images className={styles.images} ref={divRef}>
           </Images>
         </Video>
         <ContainerExt>
         {listVideo.map(item => (
-          <VideoItem key={item.id}>
+          <VideoItem key={item.id} onClick={()=> alert(`Direcionamento para o video: ${item.title} em construção!`)}>
             <VideoThubnail src={item.img}/>
             <InfoVideo>
               <VideoTitle>{item.title}</VideoTitle>

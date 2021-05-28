@@ -16,6 +16,14 @@ export const VideoTitle = styled.h3`
   margin-left: 10px;
   margin-top: -1px;
 `
+
+export const TitleVideo = styled.h3`
+  color: #fff;
+  margin-left: 10px;
+  margin-top: 13px;
+  margin-left: 10px;
+`
+
 export const VideoDesc = styled.h5`
   color: #ddd;
   margin-left: 10px;
@@ -41,7 +49,7 @@ width: 360px;
 height: 90%;
 `
 
-export const VideoItem = styled.div`
+export const VideoItem = styled.a`
 display: flex;
 height: 103px;
 border-radius: 5px;
